@@ -37,3 +37,8 @@ joint_limits:
     max_velocity: 10
     has_acceleration_limits: false
     max_acceleration: 0
+  iiwa_joint_dummy:
+    has_velocity_limits: true
+    max_velocity: 10
+    has_acceleration_limits: false
+    max_acceleration: 0

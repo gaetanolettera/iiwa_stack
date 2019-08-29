@@ -7,6 +7,7 @@
   <!-- Load URDF -->
   <include file="$(find iiwa_moveit)/launch/planning_context.launch">
     <arg name="load_robot_description" value="true"/>
+    <arg name="load_robot_description_dummy" value="true"/>
   </include>
 
   <!-- Start the database -->

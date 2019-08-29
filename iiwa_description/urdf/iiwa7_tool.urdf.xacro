@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="iiwa7_dummy" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Import Rviz colors -->
+  <xacro:include filename="$(find iiwa_description)/urdf/materials.xacro" />
+  <!--Import the lbr iiwa macro -->
+  <xacro:include filename="$(find iiwa_description)/urdf/iiwa7_tool.xacro"/>
+  
+  <xacro:arg name="hardware_interface" default="PositionJointInterface"/>
+  <xacro:arg name="robot_name" default="iiwa"/>
+  <xacro:arg name="origin_xyz" default="0 0 0.851"/>
+  <xacro:arg name="origin_rpy" default="0 0 0"/>
+  
+  <material name="workcell">
+    <color rgba="0.8 1.0 0.8 0.2"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+
+
+
+  <!-- Fix to world just for testing -->
+  <link name="world">
+
+
+<!-- box sottostante -->
+    <visual>
+      <origin xyz="0.30 0.195 0.425" rpy="0 0 0"/>
+      <geometry>
+	<box size="1.40 1.10 0.85"/>
+      </geometry>
+	<material name="workcell"/>
+    </visual>
+    <collision>
+      <origin xyz="0.30 0.195 0.425" rpy="0 0 0"/>
+      <geometry>
+	<box size="1.40 1.10 0.85"/>
+      </geometry>
+    </collision>
+
+<!--mensola 1-->
+ <visual>
+      <origin xyz="0.8525 -0.1375 1.007" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.8525 -0.1375 1.007" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+    </collision>
+
+<!--mensola 2-->
+ <visual>
+      <origin xyz="0.6625 0.5975 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6625 0.5975 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+    </collision>
+
+<!--mensola 3-->
+ <visual>
+      <origin xyz="0.6625 0.5975 1.164" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6625 0.5975 1.164" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+    </collision>
+
+<!--mensola 4-->
+ <visual>
+      <origin xyz="0.3475 0.5975 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.3475 0.5975 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.275 0.315 0.01"/>
+      </geometry>
+    </collision>
+</link>
+  
+  <!--iiwa-->
+  <xacro:iiwa7_dummy hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
+    <origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />
+  </xacro:iiwa7_dummy>
+  
+</robot>

@@ -1,3 +1,4 @@
+rate: 500
 controller_list:
   - name: fake_manipulator_controller
     joints:
@@ -8,3 +9,9 @@ controller_list:
       - iiwa_joint_5
       - iiwa_joint_6
       - iiwa_joint_7
+      - iiwa_joint_dummy
+      - iiwa_joint_ee
+  - name: fake_gripper_controller
+    joints:
+      - finger_joint1
+      - finger_joint2

@@ -1,0 +1,14 @@
+# An action which interpolates the trajectory planned by the OMPL MOveIt! planner
+
+#GOAL DEFINITION
+
+trajectory_msgs/JointTrajectory planned_trajectory
+
+---
+
+#RESULT DEFINITION
+bool interpolation_success
+
+---
+
+#FEEDBACK
