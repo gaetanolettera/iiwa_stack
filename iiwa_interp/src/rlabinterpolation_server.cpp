@@ -81,20 +81,8 @@ public:
 
     // contstruct traj
     std::vector<Vector_Independent_Traj> vect_trajs;
-    double prec_via_t0 = t0;
-    double prec_duration = 0.0;
     for( int i = 1; i<goal->planned_trajectory.points.size(); i++ )
     {
-
-      //time scale
-      double duration = goal->planned_trajectory.points[i].time_from_start.toSec() - goal->planned_trajectory.points[i-1].time_from_start.toSec();
-      duration *= 5.0;
-      double this_via_t0 = prec_via_t0 + prec_duration;
-
-      prec_via_t0 = this_via_t0;
-      prec_duration = duration;
-        
-
       //Order vector
 
       Vector_Independent_Traj this_via_traj;
@@ -102,10 +90,10 @@ public:
       {
         this_via_traj.push_back_traj(
               Quintic_Poly_Traj(   
-                                  duration, //duration
+                                  goal->planned_trajectory.points[i].time_from_start.toSec() - goal->planned_trajectory.points[i-1].time_from_start.toSec(), //duration
                                   goal->planned_trajectory.points[i-1].positions[ j ], //pi
                                   goal->planned_trajectory.points[i].positions[ j ], //pf
-                                  this_via_t0,//initial time                            
+                                  t0 + goal->planned_trajectory.points[i-1].time_from_start.toSec(),//initial time                            
                                   goal->planned_trajectory.points[i-1].velocities[ j ], //vi
                                   goal->planned_trajectory.points[i].velocities[ j ], //vf
                                   goal->planned_trajectory.points[i-1].accelerations[ j ], //ai 
