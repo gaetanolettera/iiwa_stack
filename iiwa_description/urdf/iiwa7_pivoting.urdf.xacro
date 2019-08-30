@@ -42,18 +42,19 @@
 	<box size="1.40 1.10 0.85"/>
       </geometry>
     </collision>
+
 <!--mensola 1-->
  <visual>
       <origin xyz="0.8525 -0.1375 1.007" rpy="0 0 0"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.8525 -0.1375 1.007" rpy="0 0 0"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
     </collision>
 
@@ -61,14 +62,14 @@
  <visual>
       <origin xyz="0.6625 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.6625 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
     </collision>
 
@@ -76,14 +77,14 @@
  <visual>
       <origin xyz="0.6625 0.5975 1.164" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
-      <origin xyz="0.6625 0.5975 1.164" rpy="0 0 1.57"/>
+      <origin xyz="0.6625 0.5975 1.144" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.315 0.315 0.025"/>
       </geometry>
     </collision>
 
@@ -91,18 +92,77 @@
  <visual>
       <origin xyz="0.3475 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.3475 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
     </collision>
 
-</link>
+<!--stecchetta 1-->
+ <visual>
+      <origin xyz="0.515 0.47 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.02 0.02 0.30"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.515 0.47 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.04 0.04 0.30"/>
+      </geometry>
+    </collision>
+
+<!--stecchetta 2-->
+ <visual>
+      <origin xyz="0.81 0.47 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.02 0.02 0.30"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.81 0.47 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.04 0.04 0.30"/>
+      </geometry>
+    </collision>
+
+<!--stecchetta 3-->
+ <visual>
+      <origin xyz="0.81 0.725 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.02 0.02 0.30"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.81 0.725 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.02 0.02 0.30"/>
+      </geometry>
+    </collision>
+
+<!--stecchetta 4-->
+ <visual>
+      <origin xyz="0.515 0.725 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.02 0.02 0.30"/>
+      </geometry>
+	<material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0.515 0.725 1.007" rpy="0 0 1.57"/>
+      <geometry>
+	<box size="0.02 0.02 0.30"/>
+      </geometry>
+    </collision>
+  </link>
   
   <!--iiwa-->
   <xacro:iiwa7_dummy hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">

@@ -47,14 +47,14 @@
  <visual>
       <origin xyz="0.8525 -0.1375 1.007" rpy="0 0 0"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.8525 -0.1375 1.007" rpy="0 0 0"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
     </collision>
 
@@ -62,14 +62,14 @@
  <visual>
       <origin xyz="0.6625 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.6625 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
     </collision>
 
@@ -77,14 +77,14 @@
  <visual>
       <origin xyz="0.6625 0.5975 1.164" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
-      <origin xyz="0.6625 0.5975 1.164" rpy="0 0 1.57"/>
+      <origin xyz="0.6625 0.5975 1.144" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.315 0.315 0.025"/>
       </geometry>
     </collision>
 
@@ -92,18 +92,17 @@
  <visual>
       <origin xyz="0.3475 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
 	<material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.3475 0.5975 1.007" rpy="0 0 1.57"/>
       <geometry>
-	<box size="0.275 0.315 0.01"/>
+	<box size="0.275 0.315 0.015"/>
       </geometry>
     </collision>
-</link>
-  
+  </link>
   <!--iiwa-->
   <xacro:iiwa7_dummy hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
     <origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />
