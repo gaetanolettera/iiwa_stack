@@ -81,8 +81,8 @@ public:
 
     // contstruct traj
     std::vector<Vector_Independent_Traj> vect_trajs;
-    prec_via_t0 = t0;
-    prec_duration = 0.0;
+    double prec_via_t0 = t0;
+    double prec_duration = 0.0;
     for( int i = 1; i<goal->planned_trajectory.points.size(); i++ )
     {
 
