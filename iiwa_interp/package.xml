@@ -53,6 +53,8 @@
 <depend>actionlib</depend>
 <depend>actionlib_msgs</depend>
 <depend>trajectory_msgs</depend>
+<depend>sun_robot_lib</depend>
+<depend>iiwa_msgs</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

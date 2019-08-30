@@ -12,3 +12,4 @@ bool interpolation_success
 ---
 
 #FEEDBACK
+float64 time_left
