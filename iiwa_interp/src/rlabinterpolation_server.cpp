@@ -43,11 +43,13 @@ public:
   {
   }
 
-  void executeInterpolation(const iiwa_interp::RLabinterpolationGoalConstPtr &goal)
+  void executeInterpolation(const iiwa_interp::RLabinterpolationGoal::ConstPtr& goal_msg)
   {
     // helper variables
     ros::Rate loop_rate(1000);
     bool success = true;
+
+    std::shared_ptr<iiwa_interp::RLabinterpolationGoal> goal = std::make_shared<iiwa_interp::RLabinterpolationGoal>(*goal_msg);
 
     // Obtaining the action-goal configuration parameters
 
@@ -78,6 +80,13 @@ public:
 
     //Initial Time
     double t0 = ros::Time::now().toSec() + start_delay;
+
+    //Scale Traj
+    for( int i = 1; i<goal->planned_trajectory.points.size(); i++ )
+    {
+      double traj_scale = 1.5;
+      goal->planned_trajectory.points[i].time_from_start = ros::Duration(goal->planned_trajectory.points[i].time_from_start.toSec()/traj_scale);
+    }
 
     // contstruct traj
     std::vector<Vector_Independent_Traj> vect_trajs;
